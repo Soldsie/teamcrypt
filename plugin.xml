@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="com.offrecord.teamcrypt"
+      version="0.0.1">
+    <name>Teamcrypt</name>
+    <description>Create encrypted keys to encrypt and decrypt messages.</description>
+    <license>MIT</license>
+    <keywords>cordova,phonegap,encryption</keywords>
+
+    <engines>
+      <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <js-module src="www/teamcrypt.js" name="Teamcrypt">
+        <clobbers target="window.Teamcrypt" />
+    </js-module>
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Teamcrypt">
+                <param name="ios-package" value="Teamcrypt" />
+            </feature>
+        </config-file>
+        <header-file src="src/ios/Teamcrypt.h" />
+        <source-file src="src/ios/Teamcrypt.m" />
+    </platform>
+</plugin>
